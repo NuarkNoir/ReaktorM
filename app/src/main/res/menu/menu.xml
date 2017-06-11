@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Переключить тэг">
+        <menu >
+            <item
+                android:title="Порно" >
+                <menu >
+                    <item
+                        android:id="@+id/normal_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Обычное" />
+                    <item
+                        android:id="@+id/photoporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Photo Porn" />
+                    <item
+                        android:id="@+id/oralporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Oral Porn" />
+                    <item
+                        android:id="@+id/vaginalporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Vaginal Porn" />
+                    <item
+                        android:id="@+id/analporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Anal Porn" />
+                    <item
+                        android:id="@+id/toysporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Toys Porn" />
+                    <item
+                        android:id="@+id/groupporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Group Porn" />
+                    <item
+                        android:id="@+id/lesbiansporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Lesbians Porn" />
+                    <item
+                        android:id="@+id/soloporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Solo Porn" />
+                    <item
+                        android:id="@+id/sperm_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Sperm" />
+                    <item
+                        android:id="@+id/handjobporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Handjob Porn" />
+                </menu>
+            </item>
+            <item
+                android:title="R34" >
+                <menu >
+                    <item
+                        android:id="@+id/r34_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="R34" />
+                    <item
+                        android:id="@+id/mlpporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="MLP Porn" />
+                    <item
+                        android:id="@+id/lolporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="LoL Porn" />
+                    <item
+                        android:id="@+id/overwatchporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Overwatch Porn" />
+                    <item
+                        android:id="@+id/vnporn_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="VN Porn" />
+                </menu>
+            </item><!--
+            <item
+                android:title="Хентай" >
+                <menu>
+                    <item
+                        android:id="@+id/hentai_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Хентай" />
+                    <item
+                        android:id="@+id/loliconhentai_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Лоликон" />
+                    <item
+                        android:id="@+id/masturbationhentai_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Masturbation" />
+                    <item
+                        android:id="@+id/exotichentai_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Exotic" />
+                    <item
+                        android:id="@+id/demonstrationhentai_t"
+                        android:onClick="menuTagsHandler"
+                        android:title="Demonstration" />
+                </menu>
+            </item>-->
+            <item
+                android:id="@+id/yiff_t"
+                android:onClick="menuTagsHandler"
+                android:title="Йифф" />
+            <item
+                android:id="@+id/pornart_t"
+                android:onClick="menuTagsHandler"
+                android:title="Porn Art" />
+        </menu>
+    </item>
+    <item android:title="Обновить">
+        <menu >
+            <item
+                android:id="@+id/refresher_m"
+                android:onClick="menuHandler"
+                android:title="Полностью" />
+            <item
+                android:id="@+id/refresher_fromnow_m"
+                android:onClick="menuHandler"
+                android:title="Текущую страницу" />
+        </menu>
+    </item>
+    <item android:title="Очистить кэш" android:onClick="menuHandler" android:id="@+id/clearer_m"/>
+</menu>
