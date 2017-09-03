@@ -5,20 +5,19 @@ package com.mobile.nuark.reaktor;
  * Protected by QPL-1.0
  */
 
-public class MPost {
+class MPost {
     private String author, imageUrl;
 
-    public MPost(String author, String imageUrl) {
-
+    MPost(String author, String imageUrl) {
         this.author = author;
         this.imageUrl = imageUrl;
     }
 
-    public String getAuthor() {
+    String getAuthor() {
         return author;
     }
 
-    public String getImageUrl() {
+    String getImageUrl() {
         return imageUrl;
     }
 }

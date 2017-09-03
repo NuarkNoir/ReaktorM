@@ -1,10 +1,12 @@
 package com.mobile.nuark.reaktor;
 
+import android.Manifest;
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -12,16 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.koushikdutta.ion.Ion;
-
-import org.jsoup.Jsoup;
-
-import java.io.IOException;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,25 +36,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        lv = (RecyclerView) findViewById(R.id.lvapp);
+        lv = findViewById(R.id.lvapp);
         lv.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         lv.setLayoutManager(mLayoutManager);
-        loadingNotification = (LinearLayout) findViewById(R.id.loadingNotofiaction);
-        navBar = (LinearLayout) findViewById(R.id.navigationBar);
-        gbk = (Button) findViewById(R.id.navGOBACK);
+        loadingNotification = findViewById(R.id.loadingNotofiaction);
+        navBar = findViewById(R.id.navigationBar);
+        gbk = findViewById(R.id.navGOBACK);
         gbks = gbk;
-        gfw = (Button) findViewById(R.id.navGOFORW);
-        pagesShw = (TextView) findViewById(R.id.pagesShw);
+        gfw = findViewById(R.id.navGOFORW);
+        pagesShw = findViewById(R.id.pagesShw);
         pagesShw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(act, "Direct offsetting not implemented yet 3:", Toast.LENGTH_SHORT).show();
             }
         });
-        mainContent = (LinearLayout) findViewById(R.id.mainContent);
+        mainContent = findViewById(R.id.mainContent);
         contentLoader();
         p_comparer();
+		
+		if (ContextCompat.checkSelfPermission(act, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+			Toast.makeText(act, "Запрашиваем доступ к записи на карту\n" +
+				"Пожалуйста, для корректной работы приложения, предоставьте разрешение", Toast.LENGTH_SHORT).show();
+			ActivityCompat.requestPermissions(
+				act,
+				new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE },
+				1
+			);
+        }
     }
 
     @Override
@@ -76,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void setLastpage(String _lastpage) {
-        if (lastpage == "0") lastpage = _lastpage;
+        if (lastpage.contentEquals("0")) lastpage = _lastpage;
         currentpage = _lastpage;
     }
 
@@ -184,22 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.vnporn_t:
                 url = url + "/tag/vn+porn";
-                break;/*
-            case R.id.hentai_t:
-                url = url + "/tag/хентай";
                 break;
-            case R.id.loliconhentai_t:
-                url = url + "/tag/lolicon";
-                break;
-            case R.id.masturbationhentai_t:
-                url = url + "/tag/masturbation+хентай";
-                break;
-            case R.id.exotichentai_t:
-                url = url + "/tag/exotic+хентай";
-                break;
-            case R.id.demonstrationhentai_t:
-                url = url + "/tag/demonstration+хентай";
-                break;*/
         }
         contentLoader();
     }

@@ -10,14 +10,12 @@ import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
 
@@ -72,7 +70,6 @@ public class ImageListLoader extends AsyncTask<Object, Void, Object> {
                 String author = el.select("div.uhead_nick a").first().text();
                 for (Element _el : el.select("div.post_content img")){
                     imgs.add(new MPost(author, _el.attr("src")));
-                    //System.out.println("This MPost contains: author {" + author + "} and source {" + _el.attr("src") + "}");
                 }
             }
             return "success";

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="HardcodedText">
     <item android:title="Переключить тэг">
         <menu >
             <item
@@ -75,32 +76,7 @@
                         android:onClick="menuTagsHandler"
                         android:title="VN Porn" />
                 </menu>
-            </item><!--
-            <item
-                android:title="Хентай" >
-                <menu>
-                    <item
-                        android:id="@+id/hentai_t"
-                        android:onClick="menuTagsHandler"
-                        android:title="Хентай" />
-                    <item
-                        android:id="@+id/loliconhentai_t"
-                        android:onClick="menuTagsHandler"
-                        android:title="Лоликон" />
-                    <item
-                        android:id="@+id/masturbationhentai_t"
-                        android:onClick="menuTagsHandler"
-                        android:title="Masturbation" />
-                    <item
-                        android:id="@+id/exotichentai_t"
-                        android:onClick="menuTagsHandler"
-                        android:title="Exotic" />
-                    <item
-                        android:id="@+id/demonstrationhentai_t"
-                        android:onClick="menuTagsHandler"
-                        android:title="Demonstration" />
-                </menu>
-            </item>-->
+            </item>
             <item
                 android:id="@+id/yiff_t"
                 android:onClick="menuTagsHandler"
