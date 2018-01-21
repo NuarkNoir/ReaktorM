@@ -45,8 +45,8 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(final AppAdapter.ViewHolder holder, final int position) {
-        final int id = new Random(123124).nextInt();
-        final String url = "http://dev.nuarknoir.h1n.ru/api/reactor/imgview.php?l=" + imagesPostsList.get(position).getImageUrl();
+        final int id = new Random(5336).nextInt();
+        final String url = "http://nuark.xyz/proxy.php?l=" + imagesPostsList.get(position).getImageUrl();
         imageView = holder.itemView.findViewById(R.id.image);
         progressBar = holder.itemView.findViewById(R.id.loadingProgress);
         TextView author = holder.itemView.findViewById(R.id.postauthor);
